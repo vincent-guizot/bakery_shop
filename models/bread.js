@@ -1,9 +1,12 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
+
   const Sequelize = sequelize.Sequelize
   const Model = Sequelize.Model
 
-  class Bread extends Model {}
+  class Bread extends Model {
+
+  }
 
   Bread.init({
     name: {
@@ -12,6 +15,15 @@ module.exports = (sequelize, DataTypes) => {
         notEmpty: {
           args: true,
           msg: 'Name is empty'
+        }
+      }
+    },
+    chef: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: {
+          args: true,
+          msg: 'Chef is empty'
         }
       }
     },
@@ -27,6 +39,7 @@ module.exports = (sequelize, DataTypes) => {
     category: DataTypes.STRING,
     image: DataTypes.STRING
   }, {
+    tableName: 'Breads',
     sequelize,
     hooks : {
       beforeCreate: (bread, options) => {
@@ -36,6 +49,7 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   });
+
   Bread.associate = function(models) {
     Bread.belongsToMany(models.Customer, {through: models.Transaction});
     Bread.hasMany(models.Transaction);

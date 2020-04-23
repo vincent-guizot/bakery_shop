@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <%- include('partials/bootstrap') %>
+        <title>Movies</title>
+    </head>
+    <body>
+        <%- include('partials/navbar') %>
+        <form>
+            <div class="form-group">
+              <label>Nama :</label>
+              <input type="text" class="form-control" name="nama" value="<%= data.nama%> ">
+            </div>
+            <div class="form-group">
+                <label>Chef :</label>
+                <input type="text" class="form-control" name="chef" value="<%= data.chef %>">
+            </div>
+            <div class="form-group">
+                <label>Price :</label>
+                <input type="text" class="form-control" name="price" value="<%= data.price %>">
+            </div>
+            <div class="form-group">
+                <label>Category :</label>
+                <input type="text" class="form-control" name="price" value="<%= data.category %>">
+            </div>
+          </form>
+    </body>
+    <foot>
+        <%- include('partials/footer') %>
+    </foot>
+</html>
