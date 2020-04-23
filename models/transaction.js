@@ -1,13 +1,15 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
+
   const Sequelize = sequelize.Sequelize
   const Model = Sequelize.Model
 
   class Transaction extends Model {
     getTotalPrice() {
-      return this.amount * this.Book.price;
+      return this.amount * this.Bread.price;
     }
   }
+
   Transaction.init({
     id: {
       type: DataTypes.INTEGER,
@@ -37,7 +39,7 @@ module.exports = (sequelize, DataTypes) => {
   });
   Transaction.associate = function(models) {
     Transaction.belongsTo(models.Customer);
-    Transaction.belongsTo(models.Book);
+    Transaction.belongsTo(models.Bread);
   };
   return Transaction;
 };

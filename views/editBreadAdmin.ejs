@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/bootstrap') %>
+    <title>Edit Form</title>
+</head>
+<body>
+    <section style="max-width: 70%; margin: 0 auto;">
+        <%- include('partials/navbarAdmin') %>
+        <form action="/bread/edit/<%= data.id %>" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label>Nama :</label>
+                <input type="text" class="form-control" name="nama"  value="<%= data.nama %> ">
+              </div>
+              <div class="form-group">
+                  <label>Chef :</label>
+                  <input type="text" class="form-control" name="chef"  value="<%= data.chef %> ">
+              </div>
+              <div class="form-group">
+                  <label>Price :</label>
+                  <input type="text" class="form-control" name="price"  value="<%= data.price %> ">
+              </div>
+              <div class="form-group">
+                <label>Category :</label>
+                <select class="form-control" name="category">
+                  <option value="dessert" name="category" id="dessert">Dessert</option>
+                  <option value="cake" name="categori" id="cake">Cake</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="image">Image: </label>
+                <input class="form-control-file" type="file" id="image" name="image">
+              </div>
+            <br><button type="submit" class="btn btn-primary">update</button>
+            <br><a href="/breadAdmin">cancel</a>
+          </form>
+    </section>
+</body>
+<foot>
+    <%- include('partials/footer') %>
+</foot>
+</html>
