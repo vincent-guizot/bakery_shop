@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakery Shop</title>
+    <%- include('partials/css') %>
+</head>
+
+<body>
+    <div class="container main my-3">
+        <%- include('partials/header') %>
+        <div class="container my-3">
+            <div class="row">
+                <div class="col lg-4"></div>
+                <div class="col lg-4 form-div p-0 rounded">
+                    <form action="">
+                        <div class="form-head">
+                            <h5>REGISTER</h5>
+                        </div>
+                        <div class="form-body p-3">
+                            
+                            <form action="/auth/register" method="POST">
+                                <div class="form-group">
+                                  <label for="email">Username</label>
+                                  <input type="type" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+                                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                </div>
+                                <div class="form-group">
+                                  <label for="password">Password</label>
+                                  <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                                </div>
+                            <button type="submit" class="btn btn-primary btn-block">Register</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col lg-4"></div>
+            </div>
+
+        </div>
+        <div class="container"></div>
+    </div>
+
+    <%- include('partials/scrpt') %>
+</body>
+
+</html>
