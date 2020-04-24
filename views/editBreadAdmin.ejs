@@ -10,7 +10,7 @@
         <form action="/bread/edit/<%= data.id %>" method="POST" enctype="multipart/form-data">
             <div class="form-group">
                 <label>Nama :</label>
-                <input type="text" class="form-control" name="nama"  value="<%= data.nama %> ">
+                <input type="text" class="form-control" name="name"  value="<%= data.name %> ">
               </div>
               <div class="form-group">
                   <label>Chef :</label>
@@ -23,8 +23,8 @@
               <div class="form-group">
                 <label>Category :</label>
                 <select class="form-control" name="category">
-                  <option value="dessert" name="category" id="dessert">Dessert</option>
-                  <option value="cake" name="categori" id="cake">Cake</option>
+                  <option value="Dessert" name="category" id="dessert">Dessert</option>
+                  <option value="Cake" name="category" id="cake">Cake</option>
                 </select>
               </div>
               <div class="form-group">
